@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OngTL Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/d1f93ddedc.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/logo.png" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#resume">Resume</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <h1> Hello, I am TL.Ong from Malaysia. <br>I am an engineer and coder.</h1>
+            </div>
+        </div>
+    </div>
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/user.png">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>I am an Mechanical Engineer. I like mathematic and physic so I studied bachelor dedgree of mechanical engineering at my university. In my point of view, engineering plays a fundamental role in this world. Every infrastructure and product we use in our daily lives involve engineering. From roads, buildings, and bridges to electronic devices, transportation systems, and healthcare equipment, engineering is the backbone of modern society, shaping the world around us and enhancing our quality of life. 
+                        <br><br>
+                        At the same time, I am also interested at information technology. I started writing program myself when I was 18. In recent years, the information technology has experienced significant grow, driven by ongoing innovations, technological advancements, and the increasing demand for digital solutions across various sectors and industries. I believe Information Technology (IT) has the potential to lead humanity to a higher levels of development by empowering individuals and organizations with innovative tools, knowledge, and capabilities.</p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links"onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links"onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active tab" id="skills">
+                        <ul>
+                            <li><span>Coding</span><br>Programing language C++, Python, Java, HTML, SQL</li>
+                            <li><span>3D & 2D CAD Modeling</span><br>Solidworks, Auto-CAD, Autodesk Inventor</li>
+                            <li><span>Pneumatic System Design</span><br>Solenoid valve, cylinders, actuators</li>
+                            <li><span>Electrical Design</span><br>Electrical circuit design, wiring, PLC programming</li>
+                            <li><span>Static and Flow simulation</span><br>Solidworks Computational Fluid Dynamic, Solidworks Static Simulation</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>2015</span><br>E’Sign E & I Engineering Sdn Bhd (Internship Trainee)</li>
+                            <li><span>2017-2021</span><br>PMB Technology Berhad (Design Engineer)</li>
+                            <li><span>2021-Present</span><br>Stream Industries Sdn Bhd (R&D Engineer)</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2012-2014</span><br>Diploma in Mechanical Engineering at Tunku Abdul Rahman University of Management and Technology (TAR UMT) </li>
+                            <li><span>2014-2017</span><br>Bachelor of Science (Hons) Mechanical Engineering at Tunku Abdul Rahman University of Management and Technology (TAR UMT)</li>
+                            <li><span>2022-Present (Part Time)</span><br>Master in Information Technology at Open University Malaysia</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="resume">
+        <div class="container">
+            <h1 class = "sub-title">My Resume</h1>
+            <div class ="btn-container">
+                <button class="btn btn-color-1" onclick="window.open('./assets/resume.pdf')">Download CV</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><i class="fa-solid fa-square-phone"></i>+60147263523</p>
+                    <p><i class="fa-solid fa-envelope"></i>ongtianliee_94@hotmail.com</p>
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="Email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn btn-color-1">Submit</button>
+                    </form>
+                    <span id="msg"></span>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Copyright © 2024 by OngTL</p>
+        </div>
+    </div>
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
+    <script>
+        var sidemenu = document.getElementById("sidemenu")
+        function openmenu(){
+            sidemenu.style.right="0";
+        }
+        function closemenu(){
+            sidemenu.style.right="-200px";
+        }
+    </script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxN1C2zdndk09mHqCCoB445OGEfNYZV9QnMB5OShKMV6FvJh2-Cmwv2peaTP8aYhPxg5g/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg=document.getElementById("msg")
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                msg.innerHTML = "Message sent successfully"
+                setTimeout(function(){
+                    msg.innerHTML=""},5000)
+                    form.reset()
+                })
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+</body>
